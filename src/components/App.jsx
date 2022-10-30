@@ -7,7 +7,7 @@ import { Loader } from './Loader/Loader';
 import { Button } from './Button/Button';
 import { SearchBar } from './SearchBar/SearchBar';
 
-import api from '../service/imageAPI';
+import api from '../service/imageApi';
 
 import 'react-toastify/dist/ReactToastify.css';
 import { Wrapper } from './App.styled';
