@@ -1,11 +1,15 @@
 import { Component } from 'react';
-import 'react-toastify/dist/ReactToastify.css';
+
 import { ToastContainer } from 'react-toastify';
+
 import { ImageGallery } from './ImageGallery/ImageGallery';
-import API from '../service/imageAPI';
 import { Loader } from './Loader/Loader';
 import { Button } from './Button/Button';
 import { SearchBar } from './SearchBar/SearchBar';
+
+import api from '../service/imageAPI';
+
+import 'react-toastify/dist/ReactToastify.css';
 import { Wrapper } from './App.styled';
 
 class App extends Component {
@@ -22,7 +26,7 @@ class App extends Component {
     if (prevState.inputValue !== inputValue || prevState.page !== page) {
       this.setState({ status: 'pending' });
 
-      API(inputValue, page)
+      api(inputValue, page)
         .then(resp => {
           const images = resp.hits;
           this.setState(prevState => ({
